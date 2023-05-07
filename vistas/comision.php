@@ -14,6 +14,7 @@ if (isset($_SESSION['usuario'])) {
     </head>
 
     <body>
+        <h1></h1>
         <div class="container">
             <h1>Comisiones</h1>
             <div class="row">
