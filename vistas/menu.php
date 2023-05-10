@@ -70,6 +70,21 @@
                         <?php 
                            endif;
                         ?>
+                         <?php
+                        if($_SESSION['usuario']=="Administrador"):
+                        ?>
+                        <li class="dropdown">
+                            <a href="#" style="color: black" class="dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><span
+                                    class="glyphicon glyphicon-list-alt"></span> Comisión<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="comision.php">Reglas comisión</a></li>
+                                <li><a href="#">Reporte comision</a></li>
+                            </ul>
+                        </li>
+                        <?php 
+                           endif;
+                        ?>
 
                         <!--Articulos-->
                         <?php
