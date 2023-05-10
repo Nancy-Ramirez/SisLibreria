@@ -11,7 +11,7 @@
 
     <!-- Begin Navbar -->
     <div id="nav">
-        <div class="navbar  navbar-fixed-top" data-spy="affix data-offset-top="100" style="background-color: #023535;">
+        <div class="navbar  navbar-fixed-top" data-spy="affix" data-offset-top="100" style="background-color: #023535;">
             <div class="container">
                 <div class="navbar-header">
                 <a class="navbar-brand" href="inicio.php"><img class=""

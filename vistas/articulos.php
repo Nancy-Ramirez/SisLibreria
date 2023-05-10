@@ -36,14 +36,14 @@ if (isset($_SESSION["usuario"])) { ?>
             <div class="row">
                 <div class="col-sm-4">
                     <form id="frmArticulos" enctype="multipart/form-data">
-                        <label>Nombre Articulo</label>
-                        <input type="text" class="form-control input-sm" id="nombre_articulo" name="nombre_articulo">
-                        <label>Descripcion</label>
-                        <input type="text" class="form-control input-sm" id="descripcion" name="descripcion">
-                        <label>Precio</label>
-                        <input type="text" class="form-control input-sm" id="precio" name="precio">
-                        <label>Stock</label>
-                        <input type="text" class="form-control input-sm" id="stock" name="stock">
+                        <label style="margin-top:10px;">Nombre Articulo</label>
+                        <input type="text" class="form-control input-sm" id="nombre_articulo" name="nombre_articulo" style="padding:15px;">
+                        <label style="margin-top:10px;">Descripcion</label>
+                        <input type="text" class="form-control input-sm" id="descripcion" name="descripcion" style="padding:15px;">
+                        <label style="margin-top:10px;">Precio</label>
+                        <input type="text" class="form-control input-sm" id="precio" name="precio" style="padding:15px;">
+                        <label style="margin-top:10px;">Stock</label>
+                        <input type="text" class="form-control input-sm" id="stock" name="stock" style="padding:15px;">
                         <p></p>
                         <span id="btnAgregaArticulo" class="btn btn-primary">Agregar</span>
                     </form>
