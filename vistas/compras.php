@@ -2,15 +2,27 @@
 session_start();
 if (isset($_SESSION['usuario'])) {
 ?>
-<?php 
+    <?php
 
-require_once "../clases/Conexion.php";
-$c= new conectar();
-$conexion=$c->conexion();
-$sql="SELECT id_producto,nombre_articulo
+    require_once "../clases/Conexion.php";
+    $c = new conectar();
+    $conexion = $c->conexion();
+    $sql = "SELECT id_producto,nombre_articulo
 		from articulos";
-		$result=mysqli_query($conexion,$sql);
-?>
+    $result = mysqli_query($conexion, $sql);
+
+    //PARA PAGINACIÓN
+    $sql = "SELECT COUNT(*) total FROM articulos";
+    $cuenta = mysqli_query($conexion, $sql);
+    $fila = mysqli_fetch_assoc($cuenta);
+
+    $resultado_pagina = 5;
+    $num = $fila["total"];
+
+    //contar articulos de la base de datos
+    $paginas = $num / $resultado_pagina;
+    $paginas = ceil($paginas);
+    ?>
 
 
     <!DOCTYPE html>
@@ -27,13 +39,13 @@ $sql="SELECT id_producto,nombre_articulo
             <div class="row">
                 <div class="col-sm-4">
                     <form id="frmCompra">
-                    <label>Producto</label>
-                    <select class="form-control input-sm" name="id_productoSelect" id="id_productoSelect">
-							<option value="A">Selecciona Producto</option>
-							<?php while($ver=mysqli_fetch_row($result)): ?>
-								<option value="<?php echo $ver[0]?>"><?php echo $ver[1]?></option>
-							<?php endwhile; ?>
-						</select>
+                        <label>Producto</label>
+                        <select class="form-control input-sm" name="id_productoSelect" id="id_productoSelect">
+                            <option value="A">Selecciona Producto</option>
+                            <?php while ($ver = mysqli_fetch_row($result)) : ?>
+                                <option value="<?php echo $ver[0] ?>"><?php echo $ver[1] ?></option>
+                            <?php endwhile; ?>
+                        </select>
                         <label>Precio</label>
                         <input type="text" class="form-control input-sm" id="precioU" name="precioU">
                         <label>Cantidad</label>
@@ -43,7 +55,91 @@ $sql="SELECT id_producto,nombre_articulo
                     </form>
                 </div>
                 <div class="col-sm-8">
-                    <div id="tablaComprasLoad"></div>
+                    <!--TABLA-->
+                    <div>
+                        <!--inicializando tabla-->
+                        <?php
+                        if (isset($_GET["pagina"])) {
+                            $pag = $_GET["pagina"];
+                        } else {
+                            $pag = 1;
+                        }
+                        //La pagina inicio en 0 y se multiplica $resultado_pagina
+                        $empieza = ($pag - 1) * $resultado_pagina;
+
+                        //LLenamos la tabla con los datos recuperados
+
+                        $sql = "SELECT
+                    art.nombre_articulo,
+                    SUM(art.stock) as stock,
+                    SUM(art.stock*art.precio) as total,
+                    TRUNCATE(SUM(art.stock*art.precio)/SUM(art.stock),2) as precio_venta,
+                    id_producto
+		  from articulos as art
+          group by art.id_producto LIMIT $empieza, $resultado_pagina";
+                        $result = mysqli_query($conexion, $sql);
+                        ?>
+                        <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+                            <caption><label>Articulos</label></caption>
+                            <tr>
+                                <td>Nombre Categoria</td>
+                                <td>Stock</td>
+                                <td>Precio de Venta</td>
+                            </tr>
+
+                            <?php while ($ver = mysqli_fetch_row($result)) : ?>
+
+                                <tr>
+                                    <td><?php echo $ver[0]; ?></td>
+                                    <td><?php echo $ver[1]; ?></td>
+                                    <td><?php echo $ver[3]; ?></td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </table>
+                         <!--PAGINACION-->
+                         <nav aria-label="Page navigation example" style="display: flex; justify-content: center;
+">
+                            <ul class="pagination">
+                                <li class="page-item
+                                <?php echo $_GET["pagina"] <= 1
+                                  ? "disabled"
+                                  : ""; ?>">
+
+                                    <a class="page-link"
+                                    href='articulos.php?pagina=<?php echo $_GET[
+                                      "pagina"
+                                    ] - 1; ?>'>
+                                    Anterior
+                                    </a>
+                                </li>
+
+                                <?php for ($i = 0; $i < $paginas; $i++): ?>
+                                    <li class="page-item
+                                    <?php echo $_GET["pagina"] == $i + 1
+                                      ? "active"
+                                      : ""; ?>">
+                                        
+                                        <a class="page-link" href='articulos.php?pagina=<?php echo $i +
+                                          1; ?>'>
+                                            <?php echo $i + 1; ?>
+                                        </a>
+                                    </li>
+                                <?php endfor; ?>
+
+                                <li class="page-item 
+                                <?php echo $_GET["pagina"] >= $paginas
+                                  ? "disabled"
+                                  : " "; ?>">
+                                    <a class="page-link" 
+                                    href='articulos.php?pagina=<?php echo $_GET[
+                                      "pagina"
+                                    ] + 1; ?>'>
+                                    Siguiente
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

@@ -64,7 +64,7 @@
                         <?php
                         if($_SESSION['usuario']=="Administrador"):
                         ?>
-                        <li><a href="articulos.php" style="color: white"><span class="glyphicon glyphicon-apple"></span>
+                        <li><a href="articulos.php?pagina=1" style="color: white"><span class="glyphicon glyphicon-apple"></span>
                                 Articulo</a>
                         </li>
                         <?php 

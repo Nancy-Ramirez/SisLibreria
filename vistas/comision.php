@@ -1,8 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['usuario'])) {
-
-?>
+if (isset($_SESSION["usuario"])) { ?>
 
 
     <!DOCTYPE html>
@@ -10,7 +8,28 @@ if (isset($_SESSION['usuario'])) {
 
     <head>
         <title>Comision</title>
-        <?php require_once "menu.php"; ?>
+        <?php
+        require_once "menu.php";
+        //Datos para la tabla
+        require_once "../../clases/Conexion.php";
+
+        $obj = new conectar();
+        $conexion = $obj->conexion();
+
+       
+
+        //PARA PAGINACIÓN
+        $sql = "SELECT COUNT(*) total FROM comision";
+        $cuenta = mysqli_query($conexion, $sql);
+        $fila = mysqli_fetch_assoc($cuenta);
+
+        $resultado_pagina = 5;
+        $num = $fila["total"];
+
+        //contar articulos de la base de datos
+        $paginas = $num / $resultado_pagina;
+        $paginas = ceil($paginas);
+        ?>
     </head>
 
     <body>
@@ -33,7 +52,105 @@ if (isset($_SESSION['usuario'])) {
                     </form>
                 </div>
                 <div class="col-sm-8">
-                    <div id="tablaComisionesLoad"></div>
+                    <!--TABLA-->
+                    <div>
+                        <!--inicializando tabla-->
+                        <?php
+                        if (isset($_GET["pagina"])) {
+                          $pag = $_GET["pagina"];
+                        } else {
+                          $pag = 1;
+                        }
+                        //La pagina inicio en 0 y se multiplica $resultado_pagina
+                        $empieza = ($pag - 1) * $resultado_pagina;
+
+                        //LLenamos la tabla con los datos recuperados
+                        $sql = "SELECT id_comision, 
+                        nombre_comision,
+                        venta_base,
+                        venta_limite,
+                        porcentaje
+                from comision LIMIT $empieza, $resultado_pagina";
+                        $result = mysqli_query($conexion, $sql);
+                        ?>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+                                <caption><label>Comisiones</label></caption>
+                                <tr>
+                                    <td>Nombre Comision</td>
+                                    <td>Venta Base</td>
+                                    <td>Venta Limite</td>
+                                    <td>Porcentaje</td>
+                                    <td>Editar</td>
+                                    <td>Eliminar</td>
+                                </tr>
+
+                                <?php while ($ver = mysqli_fetch_row($result)) : ?>
+
+                                    <tr>
+                                        <td><?php echo $ver[1]; ?></td>
+                                        <td><?php echo $ver[2]; ?></td>
+                                        <td><?php echo $ver[3]; ?></td>
+                                        <td><?php echo $ver[4]; ?></td>
+                                        <td>
+                                            <span class="btn btn-warning btn-xs" data-toggle="modal" data-target="#abremodalComisionUpdate" onclick="agregaDatosComision('<?php echo $ver[0]; ?>')">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="btn btn-danger btn-xs" onclick="eliminarComision('<?php echo $ver[0]; ?>')">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            </table>
+                            <!--PAGINACION-->
+                        <nav aria-label="Page navigation example" style="display: flex; justify-content: center;
+">
+                            <ul class="pagination">
+                                <li class="page-item
+                                <?php echo $_GET["pagina"] <= 1
+                                  ? "disabled"
+                                  : ""; ?>">
+
+                                    <a class="page-link"
+                                    href='articulos.php?pagina=<?php echo $_GET[
+                                      "pagina"
+                                    ] - 1; ?>'>
+                                    Anterior
+                                    </a>
+                                </li>
+
+                                <?php for ($i = 0; $i < $paginas; $i++): ?>
+                                    <li class="page-item
+                                    <?php echo $_GET["pagina"] == $i + 1
+                                      ? "active"
+                                      : ""; ?>">
+                                        
+                                        <a class="page-link" href='articulos.php?pagina=<?php echo $i +
+                                          1; ?>'>
+                                            <?php echo $i + 1; ?>
+                                        </a>
+                                    </li>
+                                <?php endfor; ?>
+
+                                <li class="page-item 
+                                <?php echo $_GET["pagina"] >= $paginas
+                                  ? "disabled"
+                                  : " "; ?>">
+                                    <a class="page-link" 
+                                    href='articulos.php?pagina=<?php echo $_GET[
+                                      "pagina"
+                                    ] + 1; ?>'>
+                                    Siguiente
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,8 +291,7 @@ if (isset($_SESSION['usuario'])) {
     </script>
 
 
-<?php
-} else {
+<?php } else {
     header("location:../index.php");
 }
 ?>
