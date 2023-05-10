@@ -19,7 +19,6 @@
     <tr>
         <td>Nombre Categoria</td>
         <td>Stock</td>
-        <td>Total</td>
         <td>Precio de Venta</td>
     </tr>
 
@@ -28,7 +27,6 @@
     <tr>
         <td><?php echo $ver[0]; ?></td>
         <td><?php echo $ver[1]; ?></td>
-        <td><?php echo $ver[2]; ?></td>
         <td><?php echo $ver[3]; ?></td>
     </tr>
     <?php endwhile; ?>
