@@ -11,7 +11,7 @@
 
     <!-- Begin Navbar -->
     <div id="nav">
-        <div class="navbar  navbar-fixed-top" data-spy="affix" data-offset-top="100" style="background-color: #5141b0;">
+        <div class="navbar  navbar-fixed-top" data-spy="affix" data-offset-top="100" style="background-color: #023535;">
             <div class="container">
                 <div class="navbar-header">
                 <a class="navbar-brand" href="inicio.php"><img class=""
@@ -31,20 +31,20 @@
 
                         <!--Inicio-->
                         <li>
-                            <a href="inicio.php" style="color: black">
+                            <a href="inicio.php" style="color: white">
                                 <span class="glyphicon glyphicon-home"></span>
                                 Inicio
                             </a>
                         </li>
                         <!--Ventas-->
-                        <li><a href="ventas.php" style="color: black"><span class="glyphicon glyphicon-usd"></span>
+                        <li><a href="ventas.php" style="color: white"><span class="glyphicon glyphicon-usd"></span>
                                 Ventas</a>
                         </li>
                         <!--Compras-->
                         <?php
                         if($_SESSION['usuario']=='Administrador'):
                         ?>
-                         <li><a href="compras.php" style="color: black"><span class="glyphicon glyphicon-usd"></span>
+                         <li><a href="compras.php" style="color: white"><span class="glyphicon glyphicon-usd"></span>
                                 Compras</a>
                         </li>
                         <?php 
@@ -55,7 +55,7 @@
                         <?php
                         if($_SESSION['usuario']=="Jefe"):
                         ?>
-                        <li><a href="articulos.php" style="color: black"><span class="glyphicon glyphicon-apple"></span>
+                        <li><a href="articulos.php" style="color: white"><span class="glyphicon glyphicon-apple"></span>
                                 Articulo</a>
                         </li>
                         <?php 
@@ -64,7 +64,7 @@
                         <?php
                         if($_SESSION['usuario']=="Administrador"):
                         ?>
-                        <li><a href="articulos.php" style="color: black"><span class="glyphicon glyphicon-apple"></span>
+                        <li><a href="articulos.php" style="color: white"><span class="glyphicon glyphicon-apple"></span>
                                 Articulo</a>
                         </li>
                         <?php 
@@ -76,7 +76,7 @@
                         if($_SESSION['usuario']=="Jefe"):
                         ?>
                         <li class="dropdown">
-                            <a href="#" style="color: black" class="dropdown-toggle" data-toggle="dropdown"
+                            <a href="#" style="color: white" class="dropdown-toggle" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"><span
                                     class="glyphicon glyphicon-list-alt"></span> Comisión<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -91,7 +91,7 @@
                         if($_SESSION['usuario']=="Administrador"):
                         ?>
                         <li class="dropdown">
-                            <a href="#" style="color: black" class="dropdown-toggle" data-toggle="dropdown"
+                            <a href="#" style="color: white" class="dropdown-toggle" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"><span
                                     class="glyphicon glyphicon-list-alt"></span> Comisión<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -108,7 +108,7 @@
                         if($_SESSION['usuario']=="Administrador"):
                         ?>
                         <li class="dropdown">
-                            <a href="#" style="color: black" class="dropdown-toggle" data-toggle="dropdown"
+                            <a href="#" style="color: white" class="dropdown-toggle" data-toggle="dropdown"
                                 role="button" aria-haspopup="true" aria-expanded="false"><span
                                     class="	glyphicon glyphicon-edit"></span> Personal <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -123,7 +123,7 @@
                         <?php
                        if($_SESSION['usuario']=="Administrador"):
                            ?>
-                        <li><a href="usuarios.php" style="color: black"><span class="glyphicon glyphicon-user"></span>
+                        <li><a href="usuarios.php" style="color: white"><span class="glyphicon glyphicon-user"></span>
                                 Usuarios</a>
                         </li>
                         <?php 
@@ -136,7 +136,7 @@
                                     class="glyphicon glyphicon-off"></span>
                                 <?php echo $_SESSION['usuario']; ?> <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li> <a style="color: #41a0b0" href="../procesos/salir.php"><span
+                                <li> <a style="color: white" href="../procesos/salir.php"><span
                                             class="glyphicon glyphicon-off"></span> Salir</a></li>
 
                             </ul>
