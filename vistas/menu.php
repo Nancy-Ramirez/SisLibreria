@@ -14,6 +14,8 @@
         <div class="navbar  navbar-fixed-top" data-spy="affix" data-offset-top="100" style="background-color: #5141b0;">
             <div class="container">
                 <div class="navbar-header">
+                <a class="navbar-brand" href="inicio.php"><img class=""
+                            src="../img/logo1.png" alt="" width="75px" height="75px" ></a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                         aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -21,8 +23,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail"
-                            src="../img/logo1.png" alt="" width="100px" height="100px" ></a>
+                    
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
 
