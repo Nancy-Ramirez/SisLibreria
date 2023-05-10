@@ -25,7 +25,7 @@
 				<tr>
 					<td>Folio</td>
 					<td>Fecha</td>
-					<td>Cliente</td>
+					<td>Vendedor</td>
 					<td>Total de compra</td>
 					<td>Ticket</td>
 					<td>Reporte</td>
