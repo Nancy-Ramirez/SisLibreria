@@ -39,22 +39,38 @@
                         <li><a href="ventas.php" style="color: black"><span class="glyphicon glyphicon-usd"></span>
                                 Ventas</a>
                         </li>
-                        <!--Comisión-->
+                        <!--Compras-->
                         <?php
                         if($_SESSION['usuario']=='Administrador'):
                         ?>
-                        <li class="dropdown">
-                            <a href="#" style="color: black" class="dropdown-toggle" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><span
-                                    class="glyphicon glyphicon-list-alt"></span> Gestionar inventario<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="compras.php">Entradas</a></li>
-                                <li><a href="comision.php">Salidas</a></li>
-                            </ul>
+                         <li><a href="ventas.php" style="color: black"><span class="glyphicon glyphicon-usd"></span>
+                                Compras</a>
                         </li>
                         <?php 
                            endif;
                         ?>
+
+                        <!--Articulos-->
+                        <?php
+                        if($_SESSION['usuario']=="Jefe"):
+                        ?>
+                        <li><a href="articulos.php" style="color: black"><span class="glyphicon glyphicon-apple"></span>
+                                Articulo</a>
+                        </li>
+                        <?php 
+                           endif;
+                        ?>
+                        <?php
+                        if($_SESSION['usuario']=="Administrador"):
+                        ?>
+                        <li><a href="articulos.php" style="color: black"><span class="glyphicon glyphicon-apple"></span>
+                                Articulo</a>
+                        </li>
+                        <?php 
+                           endif;
+                        ?>
+
+                     <!--Comisión-->
                         <?php
                         if($_SESSION['usuario']=="Jefe"):
                         ?>
@@ -86,25 +102,6 @@
                            endif;
                         ?>
 
-                        <!--Articulos-->
-                        <?php
-                        if($_SESSION['usuario']=="Jefe"):
-                        ?>
-                        <li><a href="articulos.php" style="color: black"><span class="glyphicon glyphicon-apple"></span>
-                                Articulo</a>
-                        </li>
-                        <?php 
-                           endif;
-                        ?>
-                        <?php
-                        if($_SESSION['usuario']=="Administrador"):
-                        ?>
-                        <li><a href="articulos.php" style="color: black"><span class="glyphicon glyphicon-apple"></span>
-                                Articulo</a>
-                        </li>
-                        <?php 
-                           endif;
-                        ?>
                         <!--Personal-->
                         <?php
                         if($_SESSION['usuario']=="Administrador"):
