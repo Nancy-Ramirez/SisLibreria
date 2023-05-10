@@ -13,7 +13,7 @@ $result = mysqli_query($conexion, $sql);
 
 ?>
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
+<table class="table table-striped" style="text-align: center;">
     <caption><label>Articulos</label></caption>
     <tr>
         <td>Nombre de Producto</td>
