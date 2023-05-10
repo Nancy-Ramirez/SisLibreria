@@ -22,7 +22,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="inicio.php"><img class="img-responsive logo img-thumbnail"
-                            src="../img/logo.jpeg" alt="" width="100px" height="100px"></a>
+                            src="../img/logo1.png" alt="" width="100px" height="100px" ></a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
 
@@ -43,7 +43,7 @@
                         <?php
                         if($_SESSION['usuario']=='Administrador'):
                         ?>
-                         <li><a href="ventas.php" style="color: black"><span class="glyphicon glyphicon-usd"></span>
+                         <li><a href="compras.php" style="color: black"><span class="glyphicon glyphicon-usd"></span>
                                 Compras</a>
                         </li>
                         <?php 
