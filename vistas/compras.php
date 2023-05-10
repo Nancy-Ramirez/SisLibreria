@@ -79,20 +79,20 @@ if (isset($_SESSION['usuario'])) {
           group by art.id_producto LIMIT $empieza, $resultado_pagina";
                         $result = mysqli_query($conexion, $sql);
                         ?>
-                        <table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-                            <caption><label>Articulos</label></caption>
-                            <tr>
-                                <td>Nombre Categoria</td>
-                                <td>Stock</td>
-                                <td>Precio de Venta</td>
+                        <table class="table">
+                            <caption style="text-align:center; font-size:20px"><label>Lista de articulos adquiridos</label></caption>
+                            <tr class="text-white" style="background-color: #36736D;  color:white;">
+                                <th style="text-align:center;">Nombre Categoria</th>
+                                <th style="text-align:center;">Stock</th>
+                                <th style="text-align:center;">Precio de Venta</th>
                             </tr>
 
                             <?php while ($ver = mysqli_fetch_row($result)) : ?>
 
                                 <tr>
                                     <td><?php echo $ver[0]; ?></td>
-                                    <td><?php echo $ver[1]; ?></td>
-                                    <td><?php echo $ver[3]; ?></td>
+                                    <td style="text-align:center;"><?php echo $ver[1]; ?></td>
+                                    <td style="text-align:center;">$ <?php echo $ver[3]; ?></td>
                                 </tr>
                             <?php endwhile; ?>
                         </table>
@@ -106,7 +106,7 @@ if (isset($_SESSION['usuario'])) {
                                   : ""; ?>">
 
                                     <a class="page-link"
-                                    href='articulos.php?pagina=<?php echo $_GET[
+                                    href='compras.php?pagina=<?php echo $_GET[
                                       "pagina"
                                     ] - 1; ?>'>
                                     Anterior
@@ -119,7 +119,7 @@ if (isset($_SESSION['usuario'])) {
                                       ? "active"
                                       : ""; ?>">
                                         
-                                        <a class="page-link" href='articulos.php?pagina=<?php echo $i +
+                                        <a class="page-link" href='compras.php?pagina=<?php echo $i +
                                           1; ?>'>
                                             <?php echo $i + 1; ?>
                                         </a>
@@ -131,7 +131,7 @@ if (isset($_SESSION['usuario'])) {
                                   ? "disabled"
                                   : " "; ?>">
                                     <a class="page-link" 
-                                    href='articulos.php?pagina=<?php echo $_GET[
+                                    href='compras.php?pagina=<?php echo $_GET[
                                       "pagina"
                                     ] + 1; ?>'>
                                     Siguiente

@@ -11,7 +11,7 @@
 
     <!-- Begin Navbar -->
     <div id="nav">
-        <div class="navbar  navbar-fixed-top" data-spy="affix" data-offset-top="100" style="background-color: #023535;">
+        <div class="navbar  navbar-fixed-top" data-spy="affix data-offset-top="100" style="background-color: #023535;">
             <div class="container">
                 <div class="navbar-header">
                 <a class="navbar-brand" href="inicio.php"><img class=""
@@ -44,7 +44,7 @@
                         <?php
                         if($_SESSION['usuario']=='Administrador'):
                         ?>
-                         <li><a href="compras.php" style="color: white"><span class="glyphicon glyphicon-usd"></span>
+                         <li><a href="compras.php?pagina=1" style="color: white"><span class="glyphicon glyphicon-usd"></span>
                                 Compras</a>
                         </li>
                         <?php 
@@ -55,7 +55,7 @@
                         <?php
                         if($_SESSION['usuario']=="Jefe"):
                         ?>
-                        <li><a href="articulos.php" style="color: white"><span class="glyphicon glyphicon-apple"></span>
+                        <li><a href="articulos.php?pagina=1" style="color: white"><span class="glyphicon glyphicon-apple"></span>
                                 Articulo</a>
                         </li>
                         <?php 
@@ -112,7 +112,7 @@
                                 role="button" aria-haspopup="true" aria-expanded="false"><span
                                     class="	glyphicon glyphicon-edit"></span> Personal <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="empleados.php">Empleados</a></li>
+                                <li><a href="empleados.php?pagina=1">Empleados</a></li>
                                 <li><a href="departamento.php">Departamento</a></li>
                             </ul>
                         </li>

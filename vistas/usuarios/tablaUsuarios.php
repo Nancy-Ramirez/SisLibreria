@@ -14,14 +14,14 @@
  ?>
 
 
-<table class="table table-hover table-condensed table-bordered" style="text-align: center;">
-    <caption><label>Usuarios</label></caption>
-    <tr>
-        <td>Nombre</td>
-        <td>Apellido</td>
-        <td>Usuario</td>
-        <td>Editar</td>
-        <td>Eliminar</td>
+<table class="table" style="text-align:center;">
+    <caption style="text-align:center; font-size:20px"><label>Listado de usuarios permitidos en el sistema</label></caption>
+    <tr class="text-white" style="background-color: #36736D;  color:white;">
+        <th style="text-align:center;">Nombre</th>
+        <th style="text-align:center;">Apellido</th>
+        <th style="text-align:center;">Usuario</th>
+        <th style="text-align:center;">Editar</th>
+        <th style="text-align:center;">Eliminar</th>
     </tr>
 
     <?php while($ver=mysqli_fetch_row($result)): ?>
@@ -31,13 +31,13 @@
         <td><?php echo $ver[2]; ?></td>
         <td><?php echo $ver[3]; ?></td>
         <td>
-            <span data-toggle="modal" data-target="#actualizaUsuarioModal" class="btn btn-warning btn-xs"
+            <span data-toggle="modal" data-target="#actualizaUsuarioModal" class="btn btn-warning btn-sm"
                 onclick="agregaDatosUsuario('<?php echo $ver[0]; ?>')">
                 <span class="glyphicon glyphicon-pencil"></span>
             </span>
         </td>
         <td>
-            <span class="btn btn-danger btn-xs" onclick="eliminarUsuario('<?php echo $ver[0]; ?>')">
+            <span class="btn btn-danger btn-sm" onclick="eliminarUsuario('<?php echo $ver[0]; ?>')">
                 <span class="glyphicon glyphicon-remove"></span>
             </span>
         </td>
