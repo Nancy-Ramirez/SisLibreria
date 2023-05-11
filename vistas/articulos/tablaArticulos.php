@@ -100,7 +100,7 @@ $result = mysqli_query($conexion, $sql);
        
     <li class="page-item">
       <a class="page-link" 
-      href='rticulos.php?pagina=<?php $_GET["paginas"] + 1; ?>' >
+      href='articulos.php?pagina=<?php $_GET["paginas"] + 1; ?>' >
         <span aria-hidden="true">Última</span>
       </a>
     </li>
