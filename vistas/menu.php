@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #023535; margin-bottom:20px;">
-        <div class="container-fluid ">
+    <nav class="navbar navbar-expand-lg navbar-light position-fixed-top " style="background-color: #023535; margin-bottom:20px;">
+        <div class="container-fluid position-sticky">
             <a class="navbar-brand" href="#"><a class="navbar-brand" href="#"><img class="" src="../img/logo1.png" alt="" width="50px" height="50px"></a></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@
                 <ul class="navbar-nav">
                     <!--Inicio-->
                     <li class="nav-item">
-                        <a class="nav-link" style="color:white;" href="inicio.php">Inicio</a>
+                        <a class="nav-link active" style="color:white;" href="inicio.php">Inicio</a>
                     </li>
 
                     <!--Ventas-->
