@@ -46,13 +46,10 @@
 							<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
 						</svg>
 					</div>
-					</div>
-					
-					
-					
+					</div>	
 				</div>
-				<div class="card-footer">
-					footer
+				<div class="card-footer align-items-center justify-content-between">
+					<a href="compras.php?pagina=1" class="text-white"> Ver Detalles</a>
 				</div>
 			</div>
 		</div>
@@ -70,8 +67,8 @@
 					</div>
 					</div>
 				</div>
-				<div class="card-footer">
-					footer
+				<div class="card-footer align-items-center justify-content-between">
+					<a href="articulos.php?pagina=1" class="text-white"> Ver Detalles</a>
 				</div>
 			</div>
 		</div>
@@ -89,13 +86,10 @@
 						<path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
 					</svg>
 					</div>
-					</div>
-					
-					
-					
+					</div>	
 				</div>
-				<div class="card-footer">
-					footer
+				<div class="card-footer align-items-center justify-content-between">
+					<a href="comision.php" class="text-white"> Ver Detalles</a>
 				</div>
 			</div>
 		</div>
@@ -104,7 +98,7 @@
 				<div class="card-body d-flex text-white ">
 					<div class="p-4">
 					<div class="position-absolute top-0 start-0 p-3">
-						<h3>Usuarios</h3>
+						<h3>Personal</h3>
 					</div>
 					<div class="position-absolute top-0 end-0 p-3">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -112,12 +106,47 @@
 						</svg>
 					</div>
 					</div>
-					
-					
-					
 				</div>
-				<div class="card-footer">
-					footer
+				<div class="card-footer align-items-center justify-content-between">
+					<a href="empleados.php?pagina=1" class="text-white"> Ver Detalles</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-md-6 mt-2 ">
+			<div class="card bg-c-celete">
+				<div class="card-body d-flex text-white ">
+					<div class="p-4">
+					<div class="position-absolute top-0 start-0 p-3">
+						<h3>Departamento</h3>
+					</div>
+					<div class="position-absolute top-0 end-0 p-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-building-fill" viewBox="0 0 16 16">
+  <path d="M3 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h3v-3.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V16h3a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H3Zm1 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5Z"/>
+</svg>
+					</div>
+					</div>
+				</div>
+				<div class="card-footer align-items-center justify-content-between">
+					<a href="departamento.php" class="text-white"> Ver Detalles</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-xl-3 col-md-6 mt-2 ">
+			<div class="card bg-c-blue1">
+				<div class="card-body d-flex text-white ">
+					<div class="p-4">
+					<div class="position-absolute top-0 start-0 p-3">
+						<h3>Usuarios</h3>
+					</div>
+					<div class="position-absolute top-0 end-0 p-3">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+					<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+					</svg>
+					</div>
+					</div>
+				</div>
+				<div class="card-footer align-items-center justify-content-between">
+					<a href="usuarios.php" class="text-white"> Ver Detalles</a>
 				</div>
 			</div>
 		</div>

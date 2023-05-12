@@ -15,5 +15,11 @@
     background: linear-gradient(45deg,#FF5370,#ff869a);
 }
 .bg-c-purple {
-    background: linear-gradient(45deg,#2f2233,#ff86f9);
+    background: linear-gradient(45deg,#c554e7,#ff86f9);
+}
+.bg-c-blue1 {
+    background: linear-gradient(45deg,#5754e7,#868eff);
+}
+.bg-c-celete {
+    background: linear-gradient(45deg,#54b9e7,#86fbff);
 }
