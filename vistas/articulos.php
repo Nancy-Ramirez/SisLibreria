@@ -71,8 +71,9 @@ if (isset($_SESSION["usuario"])) { ?>
           group by art.id_producto LIMIT $empieza, $resultado_pagina ";
                         $result = mysqli_query($conexion, $sql);
                         ?>
+                        <caption style="text-align:center; font-size:20px"><label>Lista de articulos disponibles</label></caption>
                         <table class="table">
-                            <caption style="text-align:center; font-size:20px"><label>Lista de articulos disponibles</label></caption>
+                            
                             <tr class="text-white" style="background-color: #36736D;  color:white;">
                                 <th style="text-align:center;">Nombre de Producto</th>
                                 <th style="text-align:center;">Descripcion</th>

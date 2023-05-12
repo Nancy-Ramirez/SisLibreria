@@ -25,10 +25,10 @@ if (mysqli_num_rows($result) > 0) {
     <script src="js/funciones.js"></script>
 </head>
 
-<body style="background-color: gray">
+<body style="background-color: whitesmoke">
     <br><br><br>
     <div class="container" style="display: flex; justify-content: center;">
-        <form class="form_main" action="" id="frmLogin" style="background-color: darkgray;">
+        <form class="form_main" action="" id="frmLogin">
             <center>
                 <img src="img/logo1.png" height="150" width="150" class="img-responsive">
             </center>

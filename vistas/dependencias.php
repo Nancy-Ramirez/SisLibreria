@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../librerias/select2/css/select2.css">
 <link rel="stylesheet" type="text/css" href="../css/card.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
+<link rel="stylesheet" type="text/css" href="../css/inputs.css">
 
 
 
