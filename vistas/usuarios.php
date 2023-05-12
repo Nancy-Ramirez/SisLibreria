@@ -18,7 +18,7 @@ if (isset($_SESSION['usuario'])) {
     </head>
 
     <body>
-        <div class="container">
+        <div class="container" style="margin-top: 85px;">
             <h1>Administrar usuarios</h1>
             <div class="row">
                 <div class="col-sm-4">

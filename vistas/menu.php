@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light position-fixed-top " style="background-color: #023535; margin-bottom:20px;">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #023535;">
         <div class="container-fluid position-sticky">
             <a class="navbar-brand" href="#"><a class="navbar-brand" href="#"><img class="" src="../img/logo1.png" alt="" width="50px" height="50px"></a></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
                     if ($_SESSION['usuario'] != 'Asesor' && $_SESSION['usuario'] != 'Jefe') :
                     ?>
                         <li class="nav-item">
-                            <a class="nav-link" style="color:white;" href="ventas.php?pagina=1">Artículo</a>
+                            <a class="nav-link" style="color:white;" href="articulos.php?pagina=1">Artículo</a>
                         </li>
                     <?php
                     endif;
@@ -75,7 +75,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="empleados.php?pagina=1">Empleados</a></li>
-                                <li><a class="dropdown-item" href="departamentos.php">Departamento</a></li>
+                                <li><a class="dropdown-item" href="departamento.php">Departamento</a></li>
                             </ul>
                         </li>
                     <?php
@@ -121,10 +121,10 @@
 <script type="text/javascript">
     $(window).scroll(function() {
         if ($(document).scrollTop() > 150) {
-            $('.logo').height(200);
+            $('.logo1').height(200);
 
         } else {
-            $('.logo').height(100);
+            $('.logo1').height(100);
         }
     });
 </script>
