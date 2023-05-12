@@ -40,9 +40,10 @@
                             <label>Usuario</label>
                             <select type="text" class="form-control input-sm" name="usuario" id="usuario">
                                 <opcion>Seleccione usuario</opcion>
-                                <option value="Jefe">Jefe</option>
                                 <option value="Administrador">Administrador</option>
-                                <option value="Asesor">Asesor</option>
+                                <option value="Coordinador">Coordinador de ventas</option>
+                                <option value="Asesor">Asesor de ventas</option>
+                                <option value="Jefe">Jefe de ventas</option>
                             </select>
                             <label>Password</label>
                             <input type="password" name="password" id="password" class="form-control input-sm">
