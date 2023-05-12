@@ -17,12 +17,12 @@
             <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <!--Inicio-->
-                    <li class="nav-item">
+                    <li class="nav-item" style="padding-right: 5px;">
                         <a class="nav-link active" style="color:white;" href="inicio.php">Inicio</a>
                     </li>
 
                     <!--Ventas-->
-                    <li class="nav-item">
+                    <li class="nav-item" style="padding-right: 5px;">
                         <a class="nav-link" style="color:white;" href="ventas.php">Ventas</a>
                     </li>
 
@@ -30,7 +30,7 @@
                     <?php
                     if ($_SESSION['usuario'] != 'Asesor') :
                     ?>
-                        <li class="nav-item">
+                        <li class="nav-item" style="padding-right: 5px;">
                             <a class="nav-link" style="color:white;" href="compras.php?pagina=1">Compras</a>
                         </li>
                     <?php
@@ -41,7 +41,7 @@
                     <?php
                     if ($_SESSION['usuario'] != 'Asesor' && $_SESSION['usuario'] != 'Jefe') :
                     ?>
-                        <li class="nav-item">
+                        <li class="nav-item" style="padding-right: 5px;">
                             <a class="nav-link" style="color:white;" href="articulos.php?pagina=1">Artículo</a>
                         </li>
                     <?php
@@ -52,7 +52,7 @@
                     <?php
                     if ($_SESSION['usuario'] != 'Asesor' && $_SESSION['usuario'] != 'Jefe') :
                     ?>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" style="padding-right: 5px;">
                             <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Comisión
                             </a>
@@ -69,7 +69,7 @@
                     <?php
                     if ($_SESSION['usuario'] != 'Asesor' && $_SESSION['usuario'] != 'Coordinador') :
                     ?>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" style="padding-right: 5px;">
                             <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Personal
                             </a>
@@ -86,7 +86,7 @@
                     <?php
                     if ($_SESSION['usuario'] == 'Administrador') :
                     ?>
-                        <li class="nav-item">
+                        <li class="nav-item" style="padding-right: 5px;">
                             <a class="nav-link" style="color:white;" href="usuarios.php">Usuarios</a>
                         </li>
                     <?php
@@ -95,7 +95,7 @@
 
                     <!--Salir-->
                     <li class="nav-item dropdown" style="padding-right: 85px;">
-                        <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                        <a class="nav-link dropdown-toggle" style="color:darkgrey;" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
                             <?php echo $_SESSION['usuario']; ?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../procesos/salir.php">Salir</a></li>
@@ -105,15 +105,6 @@
             </div>
         </div>
     </nav>
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-
-
-
-
-
-    <!-- /container -->
-
-
 </body>
 
 </html>

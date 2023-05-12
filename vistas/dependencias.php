@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="../librerias/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../librerias/select2/css/select2.css">
 <link rel="stylesheet" type="text/css" href="../css/card.css">
+<link rel="stylesheet" type="text/css" href="../css/index.css">
+
 
 
 <script src="../librerias/jquery-3.2.1.min.js"></script>
