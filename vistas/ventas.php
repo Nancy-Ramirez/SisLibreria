@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<div class="container" style="margin-top: 85px;">
+	<div class="container-fluid" style="margin-top: 85px;">
 		 <h1>Venta de productos</h1>
 		 <div class="row">
 		 	<div class="col-sm-12">

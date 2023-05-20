@@ -34,7 +34,7 @@ if (isset($_SESSION['usuario'])) {
     </head>
 
     <body>
-        <div class="container" style="margin-top: 85px;">
+        <div class="container-fluid" style="margin-top: 85px;">
             <h1>Entradas de producto</h1>
             <div class="row">
                 <div class="col-sm-4">

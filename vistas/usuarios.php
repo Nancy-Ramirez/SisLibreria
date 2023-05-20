@@ -1,14 +1,14 @@
 <?php
 session_start();
-if (isset($_SESSION['usuario'])) {
-?>
+if (isset($_SESSION["usuario"])) { ?>
     <!DOCTYPE html>
     <html>
 
     <head>
         <title>usuarios</title>
         <?php require_once "menu.php"; ?>
-        <?php require_once "../clases/Conexion.php";
+        <?php
+        require_once "../clases/Conexion.php";
         $c = new conectar();
         $conexion = $c->conexion();
         $sql = "SELECT id_rol,nombre_rol
@@ -18,7 +18,7 @@ if (isset($_SESSION['usuario'])) {
     </head>
 
     <body>
-        <div class="container" style="margin-top: 85px;">
+        <div class="container-fluid" style="margin-top: 85px;">
             <h1>Administrar usuarios</h1>
             <div class="row">
                 <div class="col-sm-4">
@@ -49,8 +49,43 @@ if (isset($_SESSION['usuario'])) {
 
         <!-- Button trigger modal -->
 
+        <!--modal-->
 
         <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Actualiza Usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                 <form id="frmRegistroU">
+                            <input type="text" hidden="" id="idUsuario" name="idUsuario">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control input-sm" name="nombreU" id="nombreU">
+                            <label>Apellido</label>
+                            <input type="text" class="form-control input-sm" name="apellidoU" id="apellidoU">
+                            <label>Usuario</label>
+                            <select type="text" class="form-control input-sm" name="usuarioU" id="usuarioU">
+                                <option value="Administrador">Administrador</option>
+                                <option value="Coordinador">Coordinador de ventas</option>
+                                <option value="Asesor">Asesor de ventas</option>
+                                <option value="Jefe">Jefe de ventas</option>
+                            </select>
+                            <label>Password</label>
+                            <input type="password" class="form-control input-sm" name="passwordU" id="passwordU">
+                        </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnActualizaUsuario"  class="btn btn-warning">Actualizar</button>
+                <button type="button"  class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- Modal -->
+        <!--
         <div class="modal fade" id="actualizaUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
@@ -83,7 +118,7 @@ if (isset($_SESSION['usuario'])) {
                 </div>
             </div>
         </div>
-
+        -->
     </body>
 
     </html>
@@ -186,8 +221,5 @@ if (isset($_SESSION['usuario'])) {
         });
     </script>
 
-<?php
-} else {
-    header("location:../index.php");
-}
+<?php } else {header("location:../index.php");}
 ?>
