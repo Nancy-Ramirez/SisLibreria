@@ -7,7 +7,7 @@
 
 	$datos=array(
 		$_POST['usuario'],
-	$_POST['password']
+	 $_POST['password']
 	);
 
 	
