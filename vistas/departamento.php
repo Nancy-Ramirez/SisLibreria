@@ -15,8 +15,8 @@ if(isset($_SESSION['usuario'])){
 
 		<div class="container-fluid" style="margin-top: 85px;">
 			<h1>Departamentos</h1>
-			<div class="row">
-				<div class="col-sm-4">
+			<div class="row ">
+				<div class="col-sm-4 border-end">
 					<form id="frmDepartamentos">
 						<label>Departamento</label>
 						<input type="text" class="form-control input-sm" name="nombre_departamento" id="nombre_departamento">
@@ -33,12 +33,12 @@ if(isset($_SESSION['usuario'])){
 		<!-- Button trigger modal -->
 
 		<!-- Modal -->
-		<div class="modal fade" id="actualizaDepartamento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog modal-sm" role="document">
+		<div class="modal fade" id="modalDepartamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title" id="myModalLabel">Actualiza Departamento</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<form id="frmDepartamentoU">
@@ -50,8 +50,8 @@ if(isset($_SESSION['usuario'])){
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" id="btnActualizaDepartamento" class="btn btn-warning" data-dismiss="modal">Guardar</button>
-
+						<button type="button" id="btnActualizaDepartamento" class="btn btn-warning"data-bs-dismiss="modal">Guardar</button>
+						<button type="button"  class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
 					</div>
 				</div>
 			</div>

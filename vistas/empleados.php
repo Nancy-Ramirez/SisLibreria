@@ -96,8 +96,8 @@ if (isset($_SESSION['usuario'])) {
 						$result = mysqli_query($conexion, $sql);
 						?>
 						<div class="table-responsive">
-							<table class="table">
-								<caption style="text-align:center; font-size:20px"><label>Listado de empleados</label></caption>
+							<table class="table table-hover table-bordered ">
+							<p class="text-center fs-4 fw-bold">Listado de Empleados</p>
 								<tr class="text-white" style="background-color: #36736D;  color:white;">
 									<th style="text-align:center;">Nombre</th>
 									<th style="text-align:center;">Apellido</th>
@@ -126,14 +126,26 @@ if (isset($_SESSION['usuario'])) {
 										<td><?php echo $ver[8]; ?></td>
 
 										<td style="text-align:center;">
-											<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#abremodalEmpleadosUpdate" onclick="agregaDatosEmpleado('<?php echo $ver[0]; ?>')">
-												<span class="glyphicon glyphicon-pencil"></span>
-											</span>
+											<a type="button"  data-bs-toggle="modal" data-bs-target="#modalEmpleados" onclick="agregaDatosEmpleado('<?php echo $ver[0]; ?>')">
+											<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none" stroke-linecap="round" stroke-linejoin="round">
+												<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+												<path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+												<path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+												<path d="M16 5l3 3" />
+											</svg>
+											</a>
 										</td>
 										<td style="text-align:center;">
-											<span class="btn btn-danger btn-sm" onclick="eliminarEmpleado('<?php echo $ver[0]; ?>')">
-												<span class="glyphicon glyphicon-remove"></span>
-											</span>
+											<a type="button" onclick="eliminarEmpleado('<?php echo $ver[0]; ?>')">
+												<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
+													<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+													<path d="M4 7l16 0" />
+													<path d="M10 11l0 6" />
+													<path d="M14 11l0 6" />
+													<path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+													<path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+												</svg>
+											</a>
 										</td>
 									</tr>
 								<?php endwhile; ?>
@@ -185,12 +197,12 @@ if (isset($_SESSION['usuario'])) {
 
 
 		<!-- Modal -->
-		<div class="modal fade" id="abremodalEmpleadosUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal fade" id="modalEmpleados" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog " role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title" id="myModalLabel">Actualizar Empleado</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<form id="frmEmpleadosU" enctype="multipart/form-data">
@@ -225,8 +237,8 @@ if (isset($_SESSION['usuario'])) {
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button id="btnActualizarEmpleadoU" type="button" class="btn btn-primary" data-dismiss="modal">Actualizar</button>
-
+						<button id="btnActualizarEmpleadoU" type="button" class="btn btn-primary" data-bs-dismiss="modal">Actualizar</button>
+						<button type="button"  class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
 					</div>
 				</div>
 			</div>

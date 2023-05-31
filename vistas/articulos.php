@@ -36,14 +36,14 @@ if (isset($_SESSION["usuario"])) { ?>
             <div class="row">
                 <div class="col-sm-4">
                     <form id="frmArticulos" enctype="multipart/form-data">
-                        <label style="margin-top:10px;">Nombre Articulo</label>
-                        <input type="text" class="form-control input-sm" id="nombre_articulo" name="nombre_articulo" style="padding:15px;">
-                        <label style="margin-top:10px;">Descripcion</label>
-                        <input type="text" class="form-control input-sm" id="descripcion" name="descripcion" style="padding:15px;">
-                        <label style="margin-top:10px;">Precio</label>
-                        <input type="text" class="form-control input-sm" id="precio" name="precio" style="padding:15px;">
-                        <label style="margin-top:10px;">Stock</label>
-                        <input type="text" class="form-control input-sm" id="stock" name="stock" style="padding:15px;">
+                        <label>Nombre Articulo</label>
+                        <input type="text" class="form-control input-sm" id="nombre_articulo" name="nombre_articulo" >
+                        <label >Descripcion</label>
+                        <input type="text" class="form-control input-sm" id="descripcion" name="descripcion" >
+                        <label >Precio</label>
+                        <input type="text" class="form-control input-sm" id="precio" name="precio" >
+                        <label >Stock</label>
+                        <input type="text" class="form-control input-sm" id="stock" name="stock" >
                         <p></p>
                         <span id="btnAgregaArticulo" class="btn btn-primary">Agregar</span>
                     </form>
@@ -71,9 +71,9 @@ if (isset($_SESSION["usuario"])) { ?>
           group by art.id_producto LIMIT $empieza, $resultado_pagina ";
                         $result = mysqli_query($conexion, $sql);
                         ?>
-                        <caption style="text-align:center; font-size:20px"><label>Lista de articulos disponibles</label></caption>
+                        
                         <table class="table">
-                            
+                        <p class="text-center fs-4 fw-bold">Lista de articulos disponibles</p>
                             <tr class="text-white" style="background-color: #36736D;  color:white;">
                                 <th style="text-align:center;">Nombre de Producto</th>
                                 <th style="text-align:center;">Descripcion</th>
@@ -90,14 +90,26 @@ if (isset($_SESSION["usuario"])) { ?>
                                     <td><?php echo $ver[1]; ?></td>
                                     <td style="text-align:center;"><?php echo $ver[2]; ?></td>
                                     <td style="text-align:center;">
-                                        <span data-toggle="modal" data-target="#abremodalUpdateArticulo" class="btn btn-warning btn-sm" onclick="agregaDatosArticulo('<?php echo $ver[3]; ?>')">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                        </span>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#modalArticulos"  onclick="agregaDatosArticulo('<?php echo $ver[3]; ?>')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ffbf00" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
+                                        <path d="M16 5l3 3" />
+                                        </svg>
+                                        </a>
                                     </td>
                                     <td style="text-align:center;">
-                                        <span class="btn btn-danger btn-sm" onclick="eliminaArticulo('<?php echo $ver[3]; ?>')">
-                                            <span class="glyphicon glyphicon-remove"></span>
-                                        </span>
+                                        <a type="button" onclick="eliminaArticulo('<?php echo $ver[3]; ?>')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg>
+                                        </a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
@@ -154,12 +166,12 @@ if (isset($_SESSION["usuario"])) { ?>
         <!-- Button trigger modal -->
 
         <!-- Modal -->
-        <div class="modal fade" id="abremodalUpdateArticulo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog modal-sm" role="document">
+        <div class="modal fade" id="modalArticulos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Actualiza Articulo</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="frmArticulosU" enctype="multipart/form-data">
@@ -176,8 +188,8 @@ if (isset($_SESSION["usuario"])) { ?>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button id="btnActualizaarticulo" type="button" class="btn btn-warning" data-dismiss="modal">Actualizar</button>
-
+                        <button id="btnActualizaarticulo" type="button" class="btn btn-warning" data-bs-dismiss="modal">Actualizar</button>
+                        <button type="button"  class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
             </div>

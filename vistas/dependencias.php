@@ -17,3 +17,5 @@
 <script src="../librerias/bootstrap/js/bootstrap.min.js"></script>
 <script src="../librerias/select2/js/select2.js"></script>
 <script src="../js/funciones.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+

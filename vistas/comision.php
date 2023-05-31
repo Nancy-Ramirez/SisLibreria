@@ -42,12 +42,12 @@ if (isset($_SESSION['usuario'])) {
 
 
         <!-- Modal -->
-        <div class="modal fade" id="abremodalComisionUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="modalComision" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Actualizar comision</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form id="frmComisionU">
@@ -63,8 +63,8 @@ if (isset($_SESSION['usuario'])) {
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button id="btnAgregarComisionU" type="button" class="btn btn-primary" data-dismiss="modal">Actualizar</button>
-
+                        <button id="btnAgregarComisionU" type="button" class="btn btn-primary" data-bs-dismiss="modal">Actualizar</button>
+                        <button type="button"  class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
             </div>
